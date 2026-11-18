@@ -1,10 +1,16 @@
 import { Navigate, Outlet } from "react-router-dom";
 
-function ProtectedRoute() {
-    const currentUser = localStorage.getItem("currentUser");
+function ProtectedRoute({ requiredRole }) {
+    const storedUser = localStorage.getItem("currentUser");
 
-    if (!currentUser) {
+    if (!storedUser) {
         return <Navigate to="/login" replace />;
+    }
+
+    const currentUser = JSON.parse(storedUser);
+
+    if (requiredRole && currentUser.role !== requiredRole) {
+        return <Navigate to="/dashboard" replace />;
     }
 
     return <Outlet />;

@@ -18,11 +18,11 @@ function App() {
                 <Route element={<Layout />}>
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/books" element={<Books />} />
-                    <Route path="/users" element={<Users />} />
-                    <Route
-                        path="/transactions"
-                        element={<Transactions />}
-                    />
+                    <Route path="/transactions" element={<Transactions />} />
+
+                    <Route element={<ProtectedRoute requiredRole="admin" />}>
+                        <Route path="/users" element={<Users />} />
+                    </Route>
                 </Route>
             </Route>
 

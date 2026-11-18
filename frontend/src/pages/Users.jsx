@@ -170,7 +170,7 @@ function Users() {
                                 name="membership_id"
                                 value={form.membership_id}
                                 onChange={handleChange}
-                                placeholder="e.g. LIB003"
+                                placeholder="e.g. L003"
                             />
                         </div>
 

@@ -21,7 +21,9 @@ function Navbar() {
             <div className="navbar-links">
                 <NavLink to="/dashboard">Dashboard</NavLink>
                 <NavLink to="/books">Books</NavLink>
-                <NavLink to="/users">Users</NavLink>
+                {currentUser?.role === "admin" && (
+                    <Link to="/users">Users</Link>
+                )}
                 <NavLink to="/transactions">Transactions</NavLink>
 
                 {currentUser && (
