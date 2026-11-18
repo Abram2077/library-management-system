@@ -22,7 +22,7 @@ function Navbar() {
                 <NavLink to="/dashboard">Dashboard</NavLink>
                 <NavLink to="/books">Books</NavLink>
                 {currentUser?.role === "admin" && (
-                    <Link to="/users">Users</Link>
+                    <NavLink to="/users">Users</NavLink>
                 )}
                 <NavLink to="/transactions">Transactions</NavLink>
 
